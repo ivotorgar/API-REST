@@ -1,0 +1,13 @@
+{
+  "listado_reservas": [
+    {
+      "representacion_texto": "Reserva #1 | Fecha: 2027-12-10 | Horario: 12:00:00 a 13:00:00 | Plazas: 1 | Motivo: un aula fantastica"
+    },
+    {
+      "representacion_texto": "Reserva #2 | Fecha: 2026-12-12 | Horario: 12:00:00 a 13:00:00 | Plazas: 1 | Motivo: Esta chula la aula"
+    },
+    {
+      "representacion_texto": "Reserva #3 | Fecha: 2026-10-12 | Horario: 12:00:00 a 13:00:00 | Plazas: 1 | Motivo: Aula chula"
+    }
+  ]
+}
