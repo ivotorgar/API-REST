@@ -41,6 +41,40 @@ paths:
                 items:
                   $ref: '#/components/schemas/Reserva'
 
+  /reservas/{id}:
+    get:
+      summary: Obtener detalles de una reserva específica
+      description: Recupera la información completa de una reserva usando su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID único de la reserva
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalle de la reserva
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reserva'
+        '404':
+          description: Reserva no encontrada
+    delete:
+      summary: Eliminar una reserva
+      description: Borra una reserva del sistema mediante su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID único de la reserva a eliminar
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Reserva eliminada correctamente
+
 components:
   schemas:
     Reserva:
