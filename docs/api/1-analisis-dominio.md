@@ -24,3 +24,6 @@ El proyecto sigue las directrices técnicas del "Proyecto Intermodular UT11":
 * **Estructura**: Código organizado en paquetes (`model`, `dao`, `view`, `controller`) para facilitar el mantenimiento.
 * **Seguridad**: Protección de datos sensibles mediante el filtrado de campos expuestos y manejo adecuado de excepciones.
 * **Integridad**: Validación de datos en la capa de persistencia para asegurar la consistencia entre las tablas relacionadas.
+
+## Validación de la API
+![Swagger UI Visualización](3-openapi/swagger-ui-demo.png)
