@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  title: API del Sistema de Reservas
+  version: 1.0.0
+  description: API para la gestión de reservas de recursos (Proyecto Intermodular).
+
+paths:
+  /reservas:
+    post:
+      summary: Crear una nueva reserva
+      description: Registra una reserva nueva vinculada a un usuario y un recurso.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReservaInput'
+      responses:
+        '201':
+          description: Reserva creada con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reserva'
+        '400':
+          description: Error de validación (datos incorrectos o recurso no existe)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Listar todas las reservas
+      description: Obtiene un listado completo de las reservas realizadas.
+      responses:
+        '200':
+          description: Lista de reservas obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reserva'
+
+components:
+  schemas:
+    Reserva:
+      type: object
+      properties:
+        idReservaLocal:
+          type: integer
+          example: 3
+        idRecurso:
+          type: integer
+          example: 42
+        email:
+          type: string
+          example: "ivotorgar@alu.edu.gva.es"
+        fecha:
+          type: string
+          format: date
+          example: "2026-12-12"
+        horaInicio:
+          type: string
+          format: time
+          example: "12:00:00"
+        horaFin:
+          type: string
+          format: time
+          example: "13:00:00"
+        numeroPlazas:
+          type: integer
+          example: 1
+        motivo:
+          type: string
+          example: "Esta chula la aula"
+    ReservaInput:
+      type: object
+      required:
+        - idRecurso
+        - email
+        - fecha
+        - horaInicio
+        - horaFin
+        - numeroPlazas
+      properties:
+        idRecurso:
+          type: integer
+        email:
+          type: string
+        fecha:
+          type: string
+          format: date
+        horaInicio:
+          type: string
+          format: time
+        horaFin:
+          type: string
+          format: time
+        numeroPlazas:
+          type: integer
+        motivo:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        codigo:
+          type: integer
+        mensaje:
+          type: string
