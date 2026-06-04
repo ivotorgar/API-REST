@@ -1,0 +1,6 @@
+{
+  "error": "Conflict / Foreign Key Violation",
+  "codigo": 400,
+  "mensaje": "No se puede completar la reserva.",
+  "causa": "El ID de recurso proporcionado no existe en la base de datos o viola las restricciones de integridad."
+}
